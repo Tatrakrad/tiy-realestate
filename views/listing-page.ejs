@@ -41,10 +41,12 @@
       <tbody>
         <!-- start looping through object -->
         <% for (var i=0;i<listings.length;i++) { %>
+          <% if(listings[i].street){ %>
         <tr>
           <td>
+
             <%= listings[i].street %>
-            <% console.log('address rendered') %>
+            <% console.log('address ',listings[i],' rendered') %>
           </td>
           <td>
             <%= listings[i].city %>
@@ -71,8 +73,11 @@
           <td>
             <%= listings[i].price %>
           </td>
+            <% } %>
+            <!-- there was an 'else' here. its gone now -->
+          <% } %>
         </tr>
-        <% } %>
+
         <!-- end loop -->
       </tbody>
     </table>
