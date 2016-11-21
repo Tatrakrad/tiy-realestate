@@ -1,9 +1,11 @@
 var express = require('express');
 var app = express();
-var parser = require('./csv-parser.js')
+var parser = require('./csv-parser.js');
+
 app.use(express.static('public'));
+app.set('view engine','ejs');
 
-
+//unnecessary get root
 app.get('/', function(req, res){
  res.sendFile('/index.html');
 
@@ -20,6 +22,20 @@ app.get('/api/realestatedata', function(req,res){
 
 });
 
-app.listen(3001, function() {
-  console.log('Listening on port 3001');
+app.get('/realestatedata', function(req,res){
+
+  var callback = function(outputDone){
+    res.render('listing-page',outputDone);
+    console.log('Finished Rendering Page');
+  }
+
+  parser(callback);
+  console.log('delegated to parser');
+
+});
+
+var port = process.env.PORT || 3001;
+
+app.listen(port, function() {
+  console.log('Listening on port... ',port);
 });

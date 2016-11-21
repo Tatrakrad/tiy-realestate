@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Real Estate Listings</title>
+    <link href='style.css' rel='stylesheet' />
+  </head>
+  <body>
+    <% console.log('address rendered') %>
+    <h1>These Are Properties For Sale:</h1>
+    <table>
+      <thead>
+        <th>
+          Street Address
+        </th>
+        <th>
+          City
+        </th>
+        <th>
+          Zip
+        </th>
+        <th>
+          State
+        </th>
+        <th>
+          Bedrooms
+        </th>
+        <th>
+          Bathrooms
+        </th>
+        <th>
+          Square-Footage
+        </th>
+        <th>
+          Type
+        </th>
+        <th>
+          Price
+        </th>
+      </thead>
+      <tbody>
+        <!-- start looping through object -->
+        <% for (var i=0;i<listings.length;i++) { %>
+        <tr>
+          <td>
+            <%= listings[i].street %>
+            <% console.log('address rendered') %>
+          </td>
+          <td>
+            <%= listings[i].city %>
+          </td>
+          <td>
+            <%= listings[i].zip %>
+          </td>
+          <td>
+            <%= listings[i].state %>
+            <!-- remove -->
+          </td>
+          <td>
+            <%= listings[i].beds %>
+          </td>
+          <td>
+            <%= listings[i].baths %>
+          </td>
+          <td>
+            <%= listings[i].sqft %>
+          </td>
+          <td>
+            <%= listings[i].type %>
+          </td>
+          <td>
+            <%= listings[i].price %>
+          </td>
+        </tr>
+        <% } %>
+        <!-- end loop -->
+      </tbody>
+    </table>
+  </body>
+</html>

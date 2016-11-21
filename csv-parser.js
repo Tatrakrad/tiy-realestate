@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-
+var testCount = 0;
 
 function parse(callback){
   var callbackForReadFile = function(err,fileContents){
@@ -31,6 +31,7 @@ function parse(callback){
         lat: values[10],
         long: values[11]
       });
+      testCount ++;
     }
 
       // dynamically add properties when you arent a fucking computer peasant
@@ -43,7 +44,7 @@ function parse(callback){
       // WRONG WRONG WRONG
 
 
-
+    console.log("Counted Listings : ",testCount);
     callback(output);
   };
 
