@@ -50,7 +50,7 @@ function parse(callback){
 
 
   fs.readFile('Sacramentorealestatetransactions.csv','utf-8',callbackForReadFile);
-  //this file is split with /r!
+  // this file is split with /r!
   // street,city,zip,state,beds,baths,sq__ft,type,sale_date,price,latitude,longitude
   console.log("reading file on disk");
 

@@ -5,11 +5,6 @@ var parser = require('./csv-parser.js');
 app.use(express.static('public'));
 app.set('view engine','ejs');
 
-//unnecessary get root
-app.get('/', function(req, res){
- res.sendFile('/index.html');
-
-});
 //
 app.get('/api/realestatedata', function(req,res){
 
